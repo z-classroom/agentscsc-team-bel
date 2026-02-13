@@ -1,0 +1,22 @@
+# configuration control file
+#Identifies the specific agent instance.
+agent_name: "TrustyAgent"
+version: "0.1"
+
+# A safety limit to prevent the agent from looping infinitely and wasting API credits.
+max_turns: 20
+
+# Tells the Python code whether to use a real LLM (OpenAI) or your "Mock" testing version.
+# "mock" runs offline with predictable behavior.
+llm_provider: "mock"
+llm_model: "mock-001"
+
+# Configures if the agent should remember past messages and how many to keep.
+memory:
+  enabled: true
+  max_messages: 12
+
+# Specifies where to save the "thinking" logs and how much detail to include.
+logging:
+  path: "logs/agent.log"
+  level: "INFO"
